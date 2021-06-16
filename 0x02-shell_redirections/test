@@ -1,3 +1,4 @@
+host	logname	time	method	url	response	bytes	referer	useragent
 pppa006.compuserve.com	-	807256800   GET /images/launch-logo.gif 200 1713        
 vcc7.langara.bc.ca	-	807256804	GET /shuttle/missions/missions.html 200 8677        
 pppa006.compuserve.com	-	807256806	GET /history/apollo/images/apollo-logo1.gif 200 1173        
