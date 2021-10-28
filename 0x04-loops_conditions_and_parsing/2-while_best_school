@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# prints Best School 10 times.
+i=0
+M="Best School"
+while [ $i -lt 10 ]
+do
+	echo "$M"
+	let i++
+done

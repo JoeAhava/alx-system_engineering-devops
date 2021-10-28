@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# files in directory.
+D="$(ls)"
+for i in $D
+do
+	echo "$i" | cut -d "-" -f 2
+done
