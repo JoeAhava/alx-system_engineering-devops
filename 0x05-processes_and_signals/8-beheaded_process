@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# print all running pid
+pkill -SIGKILL   -f ./7-highlander
