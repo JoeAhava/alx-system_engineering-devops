@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# print all running pid
+sudo bash -c "echo $$ > /var/run/holbertonscript.pid"
+trap 'echo "Y U no love me?!"' SIGINT
+trap "sudo rm -f /var/run/holbertonscript.pid; exit" SIGQUIT
+trap "sudo rm -f /var/run/holbertonscript.pid; echo I hate the kill command; exit" SIGTERM
+
+while :
+do
+	echo "To infinity and beyond"
+	sleep 2
+
+done

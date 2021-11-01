@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# print all running pid
+
+while :
+do
+	echo "I am alive!" >> /tmp/my_process
+	sleep 2
+done
