@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 # prints best school 10 times
-i=0
-while [ $i -lt 10 ];
+
+i=1
+until [ $i -gt 10 ];
 do
 	echo Best School
 	i=$((i+1))
-	if [ $i -eq 9 ];
-	then
-		echo Hi
-	fi
 done

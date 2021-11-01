@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# prints Best School 10 times.
-i=10
-M="Best School"
-until [ $i -lt 1 ]
-do
-	echo "$M"
-	let i--
-done

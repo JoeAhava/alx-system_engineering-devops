@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
-# files in directory.
-D="$(ls)"
-for i in $D
+# prints best school 10 times
+for i in *
 do
-	echo "$i" | cut -d "-" -f 2
+	echo "$i" | cut -d '-' -f 2
 done

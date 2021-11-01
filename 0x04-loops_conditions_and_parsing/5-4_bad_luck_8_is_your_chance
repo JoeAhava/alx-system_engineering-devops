@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
-# print bad on 4 and good on 8.
+# prints best school 10 times
 i=1
-M="Best School"
-while [ $i -lt 11 ]
+while [ $i -le 10 ];
 do
-	
-	if [ $i = 4 ]
+	if [ $i -eq 4 ];
 	then
-		echo "bad luck"
-		elif [ $i = 8 ]
-		then
-			 echo "good luck"
+		echo bad luck
+	elif [ $i -eq 8 ];
+	then
+		echo good luck
 	else
-		echo "$M"
+		echo Best School
 	fi
-	let i++
+	i=$((i+1))
 done

@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
-# displays Fizz Buzz.
-Fi="Fizz"
-Bu="Buzz"
-FiBu="FizzBuzz"
-for i in {1..100}
+# FizzBuzz
+
+COUNTER=1
+while [ $COUNTER -lt 101 ]
 do
-	if [ $(((i % 3) + (i % 5))) = 0 ]
-	then
-		echo "$FiBu"
-	elif [ $((i % 3)) = 0 ]
-	then
-		echo "$Fi"
-	elif [ $((i % 5)) = 0 ]
-	then
-		echo "$Bu"
-	else
-		echo "$i"
-	fi
+    if [ $((COUNTER%15)) = 0 ]
+    then
+        echo "FizzBuzz"
+    elif [ $((COUNTER%3)) = 0 ]
+    then
+        echo "Fizz"
+    elif [ $((COUNTER%5)) = 0 ]
+    then
+        echo "Buzz"
+    else
+        echo "$COUNTER"
+    fi
+    COUNTER=$((COUNTER+1))
 done
