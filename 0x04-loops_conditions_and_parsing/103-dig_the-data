@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# print best school 10 times
+awk '{print $1,$9}' apache-access.log | sort | uniq -c | sort -nr
