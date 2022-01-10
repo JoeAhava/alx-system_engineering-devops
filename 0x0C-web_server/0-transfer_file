@@ -1,12 +1,19 @@
 #!/usr/bin/env bash
 # transfers files to a remote server
 HELP="Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+if [ $# -lt 3 ];
+then
+    echo "$HELP";
+    exit;
+fi;
 
-if [[ $# -lt 3 ]]; then
-	echo $HELP
-	exit
-elif [[ $# -eq 3 ]]; then
-	scp -o StrictHostKeyChecking=no $1 $3@$2:~/
-	exit
-fi
-scp -i $4 -o StrictHostKeyChecking=no $1 $3@$2:~/ 
+file="$1"
+ip="$2"
+user="$3"
+
+if [ $# -ge 4 ];
+then
+    scp -o StrictHostKeyChecking=no -i "$4" "$file" "$user"@"$ip":~/
+else
+    scp -o StrictHostKeyChecking=no "$file" "$user"@"$ip":~/
+fi;
