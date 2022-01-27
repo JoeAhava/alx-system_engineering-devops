@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 # digs domain given
 
-dig "$1" | grep -A1 'ANSWER SECTION:' | tail +2 | awk 'BEGIN { FS="[\t]" } ; { print "The subdomain " $1 " is a " $4 " record and points to " $5}'
+domain=$1
+
+domain_full=`dig "$domain" | grep -A1 'ANSWER SECTION:' | tail +2 | awk 'BEGIN { FS="[\t]" } ; { print $1}'`
+sub=`echo "$domain_full" | cut -d "." -f1`
+rec=`dig "$domain" | grep -A1 'ANSWER SECTION:' | tail +2 | awk 'BEGIN { FS="[\t]" } ; { print $4}'`
+ip=`dig "$domain" | grep -A1 'ANSWER SECTION:' | tail +2 | awk 'BEGIN { FS="[\t]" } ; { print $5}'`
+echo "The subdomain $sub is a $rec record and points to $ip"
