@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# digs domain given
+
+dig "$1" | grep -A1 'ANSWER SECTION:' | tail +2 | awk 'BEGIN { FS="[\t]" } ; { print "The subdomain " $1 " is a " $4 " record and points to " $5}'
